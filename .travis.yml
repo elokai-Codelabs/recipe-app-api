@@ -1,0 +1,9 @@
+language: python
+python:
+  - "3.11.3"
+
+services: -docker
+
+before_script: pip install docker-compose
+
+script: -docker-compose runapp sh -c "python manage.py test && flake82"
